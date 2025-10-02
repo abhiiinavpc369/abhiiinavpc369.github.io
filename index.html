@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abhinav Ji Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{
+  --bg:#0e0e0e;
+  --fg:#fff;
+  --muted: rgba(255,255,255,0.65);
+  --accent: #0ff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'San Francisco','Segoe UI',Roboto;
+  background:var(--bg);color:var(--fg);
+  min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;
+}
+
+/* Hero */
+.hero{text-align:center;margin:80px 0 50px;animation:fadeIn 1.5s ease}
+.hero h1{font-size:48px;margin-bottom:16px;letter-spacing:2px}
+.role{font-size:24px;display:inline-block;transition:opacity 1s ease;color:var(--accent)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* Socials */
+.socials{display:flex;gap:16px;justify-content:center;margin-top:24px}
+.icon-pill{padding:12px 18px;border-radius:999px;text-decoration:none;color:var(--fg);background:rgba(255,255,255,0.08);font-size:16px;display:flex;align-items:center;gap:8px;backdrop-filter:blur(14px);transition:.3s ease}
+.icon-pill:hover{background:rgba(255,255,255,0.15);transform:translateY(-3px) scale(1.05);box-shadow:0 0 18px var(--accent)}
+
+/* Main container */
+.main{flex:1;width:90%;max-width:700px;margin:0 auto 50px;display:flex;flex-direction:column;gap:50px}
+
+/* About me (minimal style) */
+.about{display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px;animation:fadeIn 1.5s ease}
+.about p{color:var(--muted);line-height:1.6;font-size:16px;letter-spacing:0.5px}
+
+/* Skills */
+.skills{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+.skill-card{padding:12px 18px;border-radius:12px;background:rgba(255,255,255,0.05);backdrop-filter:blur(6px);transition:.3s ease;cursor:default;color:var(--fg);font-size:14px;font-weight:500}
+.skill-card:hover{transform:scale(1.05);box-shadow:0 0 12px var(--accent)}
+.skill-card i{margin-right:6px}
+
+/* Contact Form Wrapper with Animated Background */
+.contact-form-wrapper {
+  position: relative;
+  width: 100%;
+  max-width:700px;
+  margin:0 auto;
+  padding:40px;
+  border-radius:20px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+/* Background animation */
+.bg-animation {
+  position:absolute;
+  top:0; left:0;
+  width:200%; height:200%;
+  background: linear-gradient(45deg, #0ff, #ff00ff, #00ffdd, #ff0099);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  filter: blur(100px);
+  opacity:0.2;
+  z-index:1;
+}
+
+@keyframes gradientMove {
+  0% { background-position:0% 50%; }
+  50% { background-position:100% 50%; }
+  100% { background-position:0% 50%; }
+}
+
+/* Contact form itself */
+.contact-form {
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  border-radius:16px;
+  border:none;
+  background:rgba(255,255,255,0.08);
+  color:#fff;
+  transition:.3s;
+  font-size:16px;
+  padding:18px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline:none;
+  background:rgba(255,255,255,0.15);
+}
+
+.contact-form textarea{min-height:150px; resize:none;}
+
+.contact-form button {
+  background:var(--accent);
+  color:#000;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.contact-form button:hover {
+  transform:scale(1.03);
+  box-shadow:0 0 18px var(--accent);
+}
+
+/* Footer */
+footer{text-align:center;padding:30px 20px;margin-top:auto;background:none}
+footer p{color:var(--muted);font-size:14px;margin:6px 0}
+
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <h1>Abhinav Ji</h1>
+  <div class="role" id="role"></div>
+  <div class="socials" id="socials"></div>
+</section>
+
+<main class="main">
+  <!-- About Me -->
+  <div class="about">
+    <p>Hello! I'm <strong>Abhinav Ji</strong>, a passionate Web Developer and Vibe Coder. I love creating minimal, futuristic web experiences using HTML, CSS, and JavaScript. My focus is clean design, smooth animations, and user-friendly interactions.</p>
+  </div>
+
+  <!-- Skills -->
+  <div class="skills">
+    <div class="skill-card"><i class="fab fa-html5"></i>HTML</div>
+    <div class="skill-card"><i class="fab fa-css3-alt"></i>CSS</div>
+    <div class="skill-card"><i class="fab fa-js"></i>JavaScript</div>
+    <div class="skill-card"><i class="fab fa-react"></i>React</div>
+    <div class="skill-card"><i class="fab fa-git-alt"></i>Git</div>
+  </div>
+
+  <!-- Contact Form with Animated Background -->
+  <div class="contact-form-wrapper">
+    <div class="bg-animation"></div>
+    <div class="contact-form">
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <textarea placeholder="Your Message"></textarea>
+      <button>Send Message</button>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p>Made by Abhinav Ji © 2025</p>
+</footer>
+
+<script>
+// Socials
+const demoSocials = [
+  {icon:'fab fa-github',title:'GitHub',href:'https://github.com/abhiiinavpc369'},
+  {icon:'fab fa-discord',title:'Discord',href:'https://discordapp.com/users/1310836134305071106'},
+  {icon:'fas fa-envelope',title:'Email',href:'mailto:abhiiinav.pc@gmail.com'}
+];
+
+function loadSocials(){
+  const socialsEl=document.getElementById('socials');
+  demoSocials.forEach(s=>{
+    const a=document.createElement('a');
+    a.className='icon-pill';
+    a.href=s.href;
+    a.target="_blank";
+    a.innerHTML=`<i class="${s.icon}"></i> ${s.title}`;
+    socialsEl.appendChild(a);
+  });
+}
+
+// Hero role animation
+let phrases=["Web Developer","Vibe Coder"];
+let i=0;
+const role=document.getElementById('role');
+function loopRoles(){
+  role.style.opacity=0;
+  setTimeout(()=>{
+    role.textContent=phrases[i];
+    role.style.opacity=1;
+    i=(i+1)%phrases.length;
+  },400);
+}
+setInterval(loopRoles,3000);
+loopRoles();
+
+loadSocials();
+</script>
+
+</body>
+</html>
+
